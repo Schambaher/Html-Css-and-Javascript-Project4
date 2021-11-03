@@ -5,12 +5,23 @@
   margin-right: auto;
 }
 
+.text {
+  line-height: 1.5;
+  margin-top: 2rem;
+}
+
 .subtitle {
   text-transform: uppercase;
   color: #1769ff;
   font-weight: 600;
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
+}
+
+.title {
+  color: #111111;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .btn {
@@ -33,13 +44,59 @@
   background-color: #0054ed;
 }
 
+.p-1 {
+  padding: 1rem 0;
+}
+
+.p-2 {
+  padding: 2rem 0;
+}
+
+.p-3 {
+  padding: 3rem 0;
+}
+
+.p-4 {
+  padding: 4rem 0;
+}
+
+.p-5 {
+  padding: 5rem 0;
+}
+
+.p-6 {
+  padding: 6rem 0;
+}
+
+.p-7 {
+  padding: 7rem 0;
+}
+
+.p-8 {
+  padding: 8rem 0;
+}
+
+.p-9 {
+  padding: 9rem 0;
+}
+
 .hero {
-  height: 75vh;
+  height: 70vh;
   background: linear-gradient(to right, rgba(1, 0, 6, 0.7), rgba(1, 0, 10, 0.7)), url("../img/hero.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 90vh;
+  }
+}
+@media (min-width: 1024px) {
+  .hero {
+    height: 105vh;
+  }
 }
 
 .hero-container {
@@ -48,7 +105,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .hero-subtitle {
@@ -58,10 +115,78 @@
 .her-title {
   color: #fff;
   font-weight: 600;
-  line-height: 0.9;
+  line-height: 1.2;
+  font-size: 4rem;
+  align-self: flex-start;
+}
+@media (min-width: 768px) {
+  .her-title {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .her-title {
+    font-size: 9rem;
+  }
 }
 
 .hero-btn {
   align-self: flex-start;
-  margin-top: 3rem;
+  margin-top: 2rem;
+}
+
+.company {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  place-items: center;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2rem 4rem 0 rgba(0, 0, 0, 0.08);
+  transform: translateY(-6rem);
+}
+.company img {
+  width: 10rem;
+  filter: grayscale(100%);
+  opacity: 0.9;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.company img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+@media (min-width: 480px) {
+  .company {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .company {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .company {
+    grid-template-columns: repeat(5, 1fr);
+    transform: translateY(-3rem);
+    padding: 5rem;
+  }
+  .company img {
+    width: 12rem;
+  }
+}
+
+.title {
+  font-size: 2.8rem;
+  margin-top: 1rem;
+}
+
+.somos-container {
+  margin-top: 1rem;
+}
+.somos-container .title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 2rem;
 }

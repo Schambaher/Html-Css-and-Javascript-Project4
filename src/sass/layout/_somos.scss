@@ -1,0 +1,17 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.title {
+    font-size: 2.8rem;
+    margin-top: 1rem;
+}
+
+.somos-container {
+    margin-top: 1rem;
+
+    .title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 2rem;
+    }
+}

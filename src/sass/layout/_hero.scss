@@ -2,18 +2,27 @@
 @use "base/mixins" as m;
 
 .hero {
-  height: 75vh;
+  height: 70vh;
   background: linear-gradient(to right, rgba(1, 0, 6, 0.7), rgba(1, 0, 10, 0.7)),
     url("../img/hero.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  @include m.tablet {
+    height: 90vh;
+  }
+
+  @include m.desktop {
+    height: 105vh;
+  }
+
 }
 
 .hero-container {
   height: 100%;
-  @include m.centrar(column, 3rem);
+  @include m.centrar(column, 2rem);
 }
 
 .hero-subtitle {
@@ -23,10 +32,20 @@
 .her-title {
   color: v.$blanco;
   font-weight: 600;
-  line-height: 0.9;
+  line-height: 1.2;
+  font-size: 4rem;
+  align-self: flex-start;
+
+  @include m.tablet {
+    font-size: 5rem;
+  }
+
+  @include m.desktop {
+    font-size: 9rem;
+  }
 }
 
 .hero-btn {
   align-self: flex-start;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }

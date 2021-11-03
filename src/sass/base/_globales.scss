@@ -8,12 +8,23 @@
   margin-right: auto;
 }
 
+.text {
+  line-height: 1.5;
+  margin-top: 2rem;
+}
+
 .subtitle {
   text-transform: uppercase;
   color: v.$primario;
   font-weight: 600;
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
+}
+
+.title {
+  color: v.$color-titulo;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .btn {
@@ -31,3 +42,11 @@
     background-color: darken(v.$primario, 8);
   }
 }
+
+@for $i from 1 to 10 {
+  .p-#{$i} {
+    padding: #{$i}rem 0;
+  }
+}
+
+

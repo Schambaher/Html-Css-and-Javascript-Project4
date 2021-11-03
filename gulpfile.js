@@ -3,9 +3,11 @@ const { src, dest, watch, parallel } = require("gulp");
 //Css
 const sass = require("gulp-sass")(require("sass"));
 
-//Javascript
-
 //Imagenes
+const gulpWebp = require("gulp-webp");
+const gulpAvif = require("gulp-avif");
+const gulpCache = require("gulp-cache");
+const gulpImagemin = require("gulp-imagemin");
 
 //Funciones.
 function compileSass (done) {
@@ -14,13 +16,6 @@ function compileSass (done) {
         .pipe(dest("build/css"));
     done();
 }
-
-//Imagenes
-const webp = require("gulp-webp");
-const gulpAvif = require("gulp-avif");
-const gulpCache = require("gulp-cache");
-const gulpImagemin = require("gulp-imagemin");
-const gulpWebp = require("gulp-webp");
 
 function convertToWebp(done) {
   const opciones = {
@@ -49,11 +44,6 @@ function convertToPng(done) {
   src("src/img/**/*.{jpg,png}")
     .pipe(gulpCache(gulpImagemin(opciones)))
     .pipe(dest("build/img"));
-  done();
-}
-
-function compileSass(done) {
-  src("src/sass/**/*.scss").pipe(sass()).pipe(dest("build/css"));
   done();
 }
 
