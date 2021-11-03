@@ -3,10 +3,56 @@ html {
   font-size: 62.5%;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #111111;
+}
+
+h1 {
+  font-size: 10rem;
+}
+
+h2 {
+  font-size: 5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  color: #777777;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
 }

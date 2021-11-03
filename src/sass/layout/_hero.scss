@@ -1,0 +1,32 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.hero {
+  height: 75vh;
+  background: linear-gradient(to right, rgba(1, 0, 6, 0.7), rgba(1, 0, 10, 0.7)),
+    url("../img/hero.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.hero-container {
+  height: 100%;
+  @include m.centrar(column, 3rem);
+}
+
+.hero-subtitle {
+  align-self: flex-start;
+}
+
+.her-title {
+  color: v.$blanco;
+  font-weight: 600;
+  line-height: 0.9;
+}
+
+.hero-btn {
+  align-self: flex-start;
+  margin-top: 3rem;
+}
