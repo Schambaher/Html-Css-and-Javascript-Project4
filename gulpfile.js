@@ -1,8 +1,13 @@
 const {src, dest, watch} = require("gulp");
 
-//Css librery
+//Css
 const sass = require("gulp-sass")(require("sass"));
 
+//Javascript
+
+//Imagenes
+
+//Funciones.
 function compileSass (done) {
     src("src/sass/**/*.scss")
         .pipe(sass())
