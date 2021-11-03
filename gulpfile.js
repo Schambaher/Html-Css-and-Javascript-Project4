@@ -3,7 +3,6 @@ const { src, dest, watch, parallel } = require("gulp");
 //Css
 const sass = require("gulp-sass")(require("sass"));
 
-<<<<<<< HEAD
 //Javascript
 
 //Imagenes
@@ -14,7 +13,8 @@ function compileSass (done) {
         .pipe(sass())
         .pipe(dest("build/css"));
     done();
-=======
+}
+
 //Imagenes
 const webp = require("gulp-webp");
 const gulpAvif = require("gulp-avif");
@@ -55,7 +55,6 @@ function convertToPng(done) {
 function compileSass(done) {
   src("src/sass/**/*.scss").pipe(sass()).pipe(dest("build/css"));
   done();
->>>>>>> 082343248ee84ec03bab4d6b6bc557f718a26e05
 }
 
 function watchFiles() {
