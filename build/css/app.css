@@ -84,7 +84,7 @@
 }
 
 .hero {
-  height: 50vh;
+  height: 80vh;
   background: linear-gradient(to right, rgba(1, 0, 6, 0.7), rgba(1, 0, 10, 0.7)), url("../img/hero.jpg");
   background-position: center center;
   background-size: cover;
@@ -93,12 +93,12 @@
 }
 @media (min-width: 768px) {
   .hero {
-    height: 60vh;
+    height: 90vh;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .hero {
-    height: 75vh;
+    height: 110vh;
   }
 }
 
@@ -227,6 +227,9 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+.somos-info .text {
+  font-size: 1.8rem;
 }
 @media (min-width: 1024px) {
   .somos-info {

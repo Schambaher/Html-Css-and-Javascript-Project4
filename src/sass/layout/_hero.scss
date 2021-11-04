@@ -2,7 +2,7 @@
 @use "base/mixins" as m;
 
 .hero {
-  height: 50vh;
+  height: 80vh;
   background: linear-gradient(to right, rgba(1, 0, 6, 0.7), rgba(1, 0, 10, 0.7)),
     url("../img/hero.jpg");
   background-position: center center;
@@ -11,11 +11,11 @@
   background-attachment: fixed;
 
   @include m.tablet {
-    height: 60vh;
+    height: 90vh;
   }
 
-  @include m.desktop {
-    height: 75vh;
+  @include m.desktopXL {
+    height: 110vh;
   }
 }
 

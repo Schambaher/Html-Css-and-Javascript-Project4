@@ -49,6 +49,10 @@
   flex-direction: column;
   gap: 2rem;
 
+  .text {
+    font-size: 1.8rem;
+  }
+
   @include m.desktop {
     flex: 0 0 60%;
     gap: 3rem;
