@@ -10,11 +10,9 @@ const gulpCache = require("gulp-cache");
 const gulpImagemin = require("gulp-imagemin");
 
 //Funciones.
-function compileSass (done) {
-    src("src/sass/**/*.scss")
-        .pipe(sass())
-        .pipe(dest("build/css"));
-    done();
+function compileSass(done) {
+  src("src/sass/**/*.scss").pipe(sass()).pipe(dest("build/css"));
+  done();
 }
 
 function convertToWebp(done) {

@@ -1,17 +1,60 @@
-@use '../base/mixins' as m;
-@use '../base/variables' as v;
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+.somos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
 .title {
-    font-size: 2.8rem;
-    margin-top: 1rem;
+  font-size: 2.8rem;
+
+  @include m.desktop {
+    font-size: 5rem;
+  }
 }
 
 .somos-container {
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 
-    .title {
-        font-size: 2rem;
-        font-weight: 600;
-        margin-top: 2rem;
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  }
+
+  img {
+    border-radius: 1rem;
+  }
+
+  @include m.desktop {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      flex: 0 0 40%;
     }
+  }
+}
+
+.somos-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include m.desktop {
+    flex: 0 0 60%;
+    gap: 3rem;
+  }
+}
+
+.somos-btn {
+  align-self: flex-start;
 }

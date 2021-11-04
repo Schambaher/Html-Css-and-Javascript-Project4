@@ -2,7 +2,7 @@
 @use "base/mixins" as m;
 
 .hero {
-  height: 70vh;
+  height: 50vh;
   background: linear-gradient(to right, rgba(1, 0, 6, 0.7), rgba(1, 0, 10, 0.7)),
     url("../img/hero.jpg");
   background-position: center center;
@@ -11,13 +11,12 @@
   background-attachment: fixed;
 
   @include m.tablet {
-    height: 90vh;
+    height: 60vh;
   }
 
   @include m.desktop {
-    height: 105vh;
+    height: 75vh;
   }
-
 }
 
 .hero-container {
@@ -29,7 +28,7 @@
   align-self: flex-start;
 }
 
-.her-title {
+.hero-title {
   color: v.$blanco;
   font-weight: 600;
   line-height: 1.2;

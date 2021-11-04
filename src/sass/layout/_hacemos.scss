@@ -1,0 +1,92 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.hacemos {
+  background-color: v.$bg-blanco;
+}
+
+.hacemos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hacemos-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  @include m.desktop {
+    flex-direction: row;
+  }
+}
+
+.hacemos-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  }
+
+  @include m.tablet {
+    .text {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.hacemos-btn {
+  align-self: flex-start;
+  margin-top: 2rem;
+}
+
+.hacemos-items {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @include m.tablet {
+    margin-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.hacemos-item {
+  background-color: v.$blanco;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 6rem 3rem;
+  border-radius: 1rem;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .text {
+    font-size: 1.6rem;
+  }
+
+  i {
+    font-size: 3rem;
+    color: v.$primario;
+  }
+
+  @include m.tablet {
+    flex: 0 0 calc(50% - 2rem);
+    .text {
+      font-size: 1.8rem;
+    }
+  }
+}
