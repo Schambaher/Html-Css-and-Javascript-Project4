@@ -101,6 +101,11 @@
     height: 110vh;
   }
 }
+@media (min-height: 750px) {
+  .hero {
+    height: 75vh;
+  }
+}
 
 .hero-container {
   height: 100%;
@@ -251,6 +256,17 @@
   flex-direction: column;
   gap: 2rem;
 }
+@media (min-width: 1024px) {
+  .hacemos-container .title {
+    font-size: 3.2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hacemos-container .title {
+    font-size: 5rem;
+    font-weight: 600;
+  }
+}
 
 .hacemos-content {
   display: flex;
@@ -308,17 +324,29 @@
   gap: 1.5rem;
   padding: 6rem 3rem;
   border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.hacemos-item:hover {
+  background-color: #1769ff;
+  transform: translateY(-0.5rem);
+}
+.hacemos-item:hover > i, .hacemos-item:hover > .title, .hacemos-item:hover > .text {
+  color: #fff;
 }
 .hacemos-item .title {
   font-size: 2rem;
   font-weight: 600;
+  transition: 0.3s;
 }
 .hacemos-item .text {
   font-size: 1.6rem;
+  transition: 0.3s;
 }
 .hacemos-item i {
   font-size: 3rem;
   color: #1769ff;
+  transition: 0.3s;
 }
 @media (min-width: 768px) {
   .hacemos-item {
@@ -326,5 +354,81 @@
   }
   .hacemos-item .text {
     font-size: 1.8rem;
+  }
+}
+
+.nosotros {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.nosotros-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 1024px) {
+  .nosotros-container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.nosotros-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+@media (min-width: 1024px) {
+  .nosotros-info {
+    flex: 0 0 55%;
+  }
+}
+
+.nosotros-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.nosotros-item .text {
+  font-size: 1.6rem;
+  width: 90%;
+}
+@media (min-width: 1024px) {
+  .nosotros-item .text {
+    font-size: 1.8rem;
+  }
+}
+
+.nosotros-item-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.nosotros-item-header i {
+  font-size: 2.5rem;
+  color: #1769ff;
+}
+.nosotros-item-header .title {
+  font-size: 2rem;
+  transition: 0.3s;
+}
+.nosotros-item-header .title:hover {
+  color: #1769ff;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .nosotros-item-header .title {
+    font-size: 2.6rem;
+  }
+}
+
+.nosotros-imagen img {
+  border-radius: 1rem;
+}
+@media (min-width: 1024px) {
+  .nosotros-imagen {
+    flex: 0 0 45%;
   }
 }

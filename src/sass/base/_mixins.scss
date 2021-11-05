@@ -24,6 +24,12 @@
   }
 }
 
+@mixin desktopHeight {
+  @media (min-height: 750px) {
+    @content;
+  }
+}
+
 @mixin centrar($direccion, $separacion) {
   display: flex;
   flex-direction: $direccion;

@@ -9,6 +9,19 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @include m.desktop {
+    .title {
+      font-size: 3.2rem;
+    }
+  }
+
+  @include m.desktopXL {
+    .title {
+      font-size: 5rem;
+      font-weight: 600;
+    }
+  }
 }
 
 .hacemos-content {
@@ -68,19 +81,35 @@
   gap: 1.5rem;
   padding: 6rem 3rem;
   border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: v.$primario;
+    transform: translateY(-0.5rem);
+  }
+
+  &:hover > i,
+  &:hover > .title,
+  &:hover > .text {
+    color: v.$blanco;
+  }
 
   .title {
     font-size: 2rem;
     font-weight: 600;
+    transition: 0.3s;
   }
 
   .text {
     font-size: 1.6rem;
+    transition: 0.3s;
   }
 
   i {
     font-size: 3rem;
     color: v.$primario;
+    transition: 0.3s;
   }
 
   @include m.tablet {

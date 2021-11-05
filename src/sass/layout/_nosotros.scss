@@ -1,0 +1,79 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.nosotros {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.nosotros-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include m.desktop {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.nosotros-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @include m.desktop {
+    flex: 0 0 55%;
+  }
+}
+
+.nosotros-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  .text {
+    font-size: 1.6rem;
+    width: 90%;
+  }
+
+  @include m.desktop {
+    .text {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.nosotros-item-header {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  i {
+    font-size: 2.5rem;
+    color: v.$primario;
+  }
+
+  .title {
+    font-size: 2rem;
+    transition: 0.3s;
+    &:hover {
+      color: v.$primario;
+      cursor: pointer;
+    }
+  }
+  @include m.desktop {
+    .title {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+.nosotros-imagen {
+  img {
+    border-radius: 1rem;
+  }
+  @include m.desktop {
+    flex: 0 0 45%;
+  }
+}

@@ -17,6 +17,10 @@
   @include m.desktopXL {
     height: 110vh;
   }
+
+  @include m.desktopHeight {
+    height: 75vh;
+  }
 }
 
 .hero-container {
