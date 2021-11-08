@@ -15,6 +15,11 @@ function compileSass(done) {
   done();
 }
 
+function javascript(done) {
+  src("src/js/**/*.js").pipe(dest("build/js"));
+  done();
+}
+
 function convertToWebp(done) {
   const opciones = {
     quality: 50,
@@ -47,8 +52,8 @@ function convertToPng(done) {
 
 function watchFiles() {
   watch("src/sass/**/*.scss", compileSass);
+  watch("src/js/**/*.js", javascript);
 }
 
-exports.sass = compileSass;
 exports.convert = parallel(convertToWebp, convertToAvif, convertToPng);
-exports.default = watchFiles;
+exports.default = parallel(watchFiles, compileSass, javascript);
