@@ -1,120 +1,116 @@
-@use '../base/mixins' as m;
-@use '../base/variables' as v;
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
 
 .stats {
-    background-color: v.$bg-blanco;
-    padding: 10rem 0;
+  background-color: v.$bg-blanco;
 }
 
 .stats-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
+  .title {
+    font-size: 3.2rem;
+  }
+
+  @include m.desktop {
     .title {
-        font-size: 3.2rem;
+      font-size: 5rem;
     }
-
-    @include m.desktop {
-        .title {
-            font-size: 5rem;
-        }
-    }
+  }
 }
 
 .stats-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-    @include m.desktop {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0;
-    }
-
+  @include m.desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
 }
 
 .stats-image {
-    img {
-        border-radius: 1rem;
-    }
+  img {
+    border-radius: 1rem;
+  }
 
-    @include m.desktop {
-        flex: 0 0 calc(50% - 2rem);
-    }
+  @include m.desktop {
+    flex: 0 0 calc(50% - 2rem);
+  }
 }
 
 .stats-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-    .title {
-        font-size: 2rem;
-    }
+  .title {
+    font-size: 2rem;
+  }
 
+  .text {
+    font-size: 1.6rem;
+  }
+
+  @include m.tablet {
     .text {
-        font-size: 1.6rem;
+      font-size: 1.8rem;
     }
+  }
 
-    @include m.tablet {
-
-        .text {
-            font-size: 1.8rem;
-        }
-    }
-
-    @include m.desktop {
-        flex: 0 0 calc(50% - 2rem);
-    }
+  @include m.desktop {
+    flex: 0 0 calc(50% - 2rem);
+  }
 }
 
 .stats-btn {
-    align-self: flex-start;
-    margin-top: 4rem;
+  align-self: flex-start;
+  margin-top: 4rem;
 }
 
 .stats-info-items {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include m.desktop {
-        margin-top: 5rem;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include m.desktop {
+    margin-top: 5rem;
+  }
 }
 
 .stats-info-item {
-    flex: 0 0 calc(50% - 3rem);
-    @include m.centrar(column, 1rem);
+  flex: 0 0 calc(50% - 3rem);
+  @include m.centrar(column, 1rem);
 
-    @include m.tablet {
-        align-items: flex-start;
-    }
-
+  @include m.tablet {
+    align-items: flex-start;
+  }
 }
 
 .stats-info-item-number {
-    font-size: 3.5rem;
-    color: v.$negro;
-    font-weight: 600;
+  font-size: 3.5rem;
+  color: v.$negro;
+  font-weight: 600;
 
-    @include m.tablet{
-        font-size: 4rem;
-    }
+  @include m.tablet {
+    font-size: 4rem;
+  }
 
-    @include m.desktop {
-        font-size: 5.5rem;
-    }
+  @include m.desktop {
+    font-size: 5.5rem;
+  }
 }
 
 .stats-info-item-title {
-    color: v.$primario;
-    font-size: 1.6rem;
+  color: v.$primario;
+  font-size: 1.6rem;
 
-    @include m.tablet {
-        font-size: 1.8rem;
-        font-weight: 600;
-    }
+  @include m.tablet {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
 }
