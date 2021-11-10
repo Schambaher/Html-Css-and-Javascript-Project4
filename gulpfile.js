@@ -20,6 +20,18 @@ function javascript(done) {
   done();
 }
 
+function owlCarouselJs (done) {
+  src("src/owlCarousel/js/*.js")
+    .pipe(dest("build/js"))
+  done();
+}
+
+function owlCarouselCss (done) {
+  src("src/owlCarousel/css/*.css")
+    .pipe(dest("build/css"))
+  done();
+}
+
 function convertToWebp(done) {
   const opciones = {
     quality: 50,
@@ -55,5 +67,6 @@ function watchFiles() {
   watch("src/js/**/*.js", javascript);
 }
 
+exports.owlCarousel = parallel(owlCarouselCss, owlCarouselJs);
 exports.convert = parallel(convertToWebp, convertToAvif, convertToPng);
 exports.default = parallel(watchFiles, compileSass, javascript);

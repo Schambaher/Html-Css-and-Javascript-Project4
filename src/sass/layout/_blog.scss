@@ -1,0 +1,61 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.blog-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include m.desktop {
+        gap: 0;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+
+.blog-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    img {
+        border-radius: 1rem;
+    }
+
+    @include m.desktop {
+        flex: 0 0 calc(50% - 2rem);
+    }
+}
+
+.blog-item-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.blog-item-body-title {
+    transition: .3s;
+    cursor: pointer;
+    &:hover {
+        color: v.$primario;
+    }
+
+    @include m.tablet {
+        font-size: 2rem;
+    }
+
+    @include m.desktop {
+        font-size: 2.8rem;
+    }
+}
+
+.blog-btn {
+    align-self: flex-start;
+}

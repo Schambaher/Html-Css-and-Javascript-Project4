@@ -1,3 +1,20 @@
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel({
+    items: 2,
+    margin: 10,
+    loop: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      1000: {
+        items: 2
+      }
+    }
+  });
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const contadores = document.querySelectorAll(".contador");
