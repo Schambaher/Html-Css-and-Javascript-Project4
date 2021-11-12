@@ -1,0 +1,53 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.contact {
+    background-color: v.$bg-blanco;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: space-between;
+
+    .title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    @include m.tablet {
+        flex-direction: row;
+    }
+
+    @include m.desktop {
+        gap: 0;
+    }
+}
+
+.contact-call, .contact-location, .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @include m.desktop {
+        flex-direction: row;
+    }
+}
+
+.contact-input {
+    outline: none;
+    padding: 1.5rem 3rem;
+    border: 1px solid #eee;
+    border-radius: .6rem;
+
+    &:focus {
+        border: 1px solid v.$primario;
+    }
+}
