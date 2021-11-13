@@ -1,0 +1,59 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.footer {
+    background-color: v.$bg-negro;
+    
+    &-info, &-work, &-say, &-social {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .title {
+            color: v.$blanco;
+            font-size: 2rem;
+        }
+    }
+    &-info {
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            span {
+                color: v.$primario;
+            }
+        }
+    }
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include m.desktop {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.footer-info {
+    flex: 0 0 calc(30% - 2rem);
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    li {
+        color: v.$color-texto;
+        display: flex;
+        gap: 1rem;
+        span {
+            color: v.$color-texto;
+            @include m.centrar(column, 0);
+            height: 4rem;
+            width: 4rem;
+            border: 2px solid v.$color-texto;
+            border-radius: 50%;
+        }
+    }
+}
