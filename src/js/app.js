@@ -17,6 +17,34 @@ $(document).ready(function(){
 
 document.addEventListener("DOMContentLoaded", function () {
 
+  const menu = document.getElementById("menu");
+
+  const navigation = document.getElementById("navigation");
+
+  const times = document.createElement("i");
+  const bars = document.createElement("i");
+  times.classList.add("fas", "fa-times");
+  bars.classList.add("fas", "fa-bars");
+
+  menu.appendChild(bars);
+
+  menu.addEventListener("click", function () {
+    navigation.classList.toggle("show");
+
+    if(menu.children[0] === bars) {
+      menu.removeChild(bars);
+      menu.appendChild(times);
+    }
+    else if (menu.children[0] === times) {
+      menu.removeChild(times);
+      menu.appendChild(bars);
+    }
+
+  });
+  
+
+
+
   const contadores = document.querySelectorAll(".contador");
   const velocidad = 1000;
 
@@ -54,4 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
   contadores.forEach(contador => {
     observer.observe(contador);
   })
+
+
 });

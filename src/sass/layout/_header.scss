@@ -1,0 +1,84 @@
+@use '../base/mixins' as m;
+@use '../base/variables' as v;
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 2;
+}
+
+.menu-bar {
+    background-color: v.$primario;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    padding: 1rem;
+    cursor: pointer;
+    i {
+        color: v.$blanco;
+        font-size: 2rem;
+    }
+
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .title {
+        color: v.$blanco;
+        font-size: 3.6rem;
+        font-weight: 600;
+        span {
+            color: v.$primario;
+      }
+    }
+}
+
+.header-navigation {
+    flex: 0 0 100%;
+    background-color: white;
+    height: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: .3s;
+}
+
+.header-navigation.show {
+    height: auto;
+}
+
+.header-navigation-items {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-navigation-item {
+    margin-top: 2rem;
+
+    &:nth-of-type(1) {
+        margin-top: 0;
+    }
+
+    &:nth-of-type(7) > button {
+        background-color: white;
+        color: v.$primario;
+    }
+
+    a {
+        color: rgba(0, 0, 0, .8);
+        transition: color .3s;
+        &:hover {
+            color: black;
+        }
+    }
+}
