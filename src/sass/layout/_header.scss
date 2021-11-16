@@ -4,25 +4,22 @@
 .header {
     position: fixed;
     width: 100%;
-    padding: 1rem 0;
+    background-color: transparent;
     z-index: 2;
+    transition: .2s;
+
+    &.sticky {
+        background-color: white;
+        box-shadow: 0 .3rem .6rem 0 rgba(0, 0, 0, 5%);
+    }
 }
 
-.menu-bar {
-    background-color: v.$primario;
-    height: 3rem;
-    width: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: .5rem;
-    padding: 1rem;
-    cursor: pointer;
-    i {
-        color: v.$blanco;
-        font-size: 2rem;
-    }
+.header.sticky > .header-container > .header-title {
+    color: black;
+}
 
+.header.sticky > .header-container {
+    padding: 2rem 0;
 }
 
 .header-container {
@@ -30,55 +27,129 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    padding: 3rem 0;
+    transition: .3s;
 
-    .title {
-        color: v.$blanco;
-        font-size: 3.6rem;
-        font-weight: 600;
-        span {
-            color: v.$primario;
-      }
+    @include m.desktop {
+        flex-wrap: nowrap;
+    }
+
+}
+
+.header-title {
+    color: white;
+    font-size: 4rem;
+    font-weight: 600;
+    transition: .2s;
+
+    span {
+        color: v.$primario;
+    }
+}
+
+.menu-bar {
+    background-color: v.$primario;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+
+    @include m.desktop {
+        display: none;
     }
 }
 
 .header-navigation {
     flex: 0 0 100%;
     background-color: white;
-    height: 0;
-    overflow: hidden;
     border-radius: 1rem;
-    transition: .3s;
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s linear;
+
+    @include m.desktop {
+        max-height: 35rem;
+        flex-basis: auto;
+        background-color: transparent;
+    }
 }
 
 .header-navigation.show {
-    height: auto;
+    max-height: 35rem;
 }
 
 .header-navigation-items {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 2rem;
+
+    @include m.desktop {
+        flex-direction: row;
+        padding: 0;
+    }
 }
 
 .header-navigation-item {
-    margin-top: 2rem;
-
-    &:nth-of-type(1) {
-        margin-top: 0;
+    &:nth-of-type(6) > ion-icon {
+        font-size: 2.5rem;
+        font-weight: 600;
+        --ionicon-stroke-width : 6.4rem ;
+        
+        @include m.desktop {
+            color: white;
+            padding: 0 4rem;
+        }
     }
 
-    &:nth-of-type(7) > button {
+    &:nth-of-type(7) > .header-btn {
         background-color: white;
         color: v.$primario;
+        transition: .2s;
+
+        &:hover {
+            background-color: v.$primario;
+            color: white;
+        }
     }
 
-    a {
-        color: rgba(0, 0, 0, .8);
-        transition: color .3s;
-        &:hover {
+    @include m.desktop {
+        &.sticky:nth-of-type(6) > ion-icon {
             color: black;
+        }
+    
+        &.sticky:nth-of-type(7) > .header-btn {
+            color: white;
+            background-color: v.$primario;
+        }
+
+        &.sticky > .header-navigation-item-link {
+            color: rgba(0, 0, 0, .8);
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}
+
+.header-navigation-item-link {
+    color: rgba(0, 0, 0, .8);
+    transition: .2s;
+
+    &:hover {
+        color: black;
+    }
+
+    @include m.desktop {
+        color: rgba(255, 255, 255, .9);
+
+        &:hover {
+            color: white;
         }
     }
 }

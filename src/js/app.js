@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const navigation = document.getElementById("navigation");
 
+  const header = document.getElementById("header");
+
+  const headerNavigationItems = document.querySelectorAll(".header-navigation-item");
+
   const times = document.createElement("i");
   const bars = document.createElement("i");
   times.classList.add("fas", "fa-times");
@@ -40,6 +44,14 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.appendChild(bars);
     }
 
+  });
+
+  window.addEventListener("scroll", function () {
+    header.classList.toggle("sticky", window.scrollY > 0);
+
+    headerNavigationItems.forEach(function (link) {
+      link.classList.toggle("sticky", window.scrollY > 0);
+    });
   });
   
 
